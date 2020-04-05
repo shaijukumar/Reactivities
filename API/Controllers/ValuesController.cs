@@ -9,15 +9,21 @@ using Persistence;
 
 namespace API.Controllers
 {
+
+    
+
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
         private readonly DataContext _context;
         public ValuesController(DataContext context)
         {
             _context = context;
         }
+        
         
         // GET api/values
         [HttpGet]
@@ -26,6 +32,7 @@ namespace API.Controllers
             var values = await _context.Values.ToListAsync();
             return Ok(values);
         }
+              
 
         // GET api/values/5
         [HttpGet("{id}")]
