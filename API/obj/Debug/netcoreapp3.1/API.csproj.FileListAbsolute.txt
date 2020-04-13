@@ -63,3 +63,8 @@ D:\Shaiju\DotNetCore\Reactivities\API\obj\Debug\netcoreapp3.1\API.csproj.CopyCom
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\MediatR.dll
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\FluentValidation.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+D:\Shaiju\DotNetCore\Reactivities\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

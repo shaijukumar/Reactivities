@@ -68,24 +68,24 @@ class ActivityStore{
     }
 
     @action loadActivity = async (id:string) => {
-
+      debugger;
         let activity = this.getActivity(id);
         if(activity){
             this.activity = activity;
         } else{
             this.loadingInitial = true;
 
-            try{           
-                await agent.Activities.details(id);   
+            try{                        
+                activity = await agent.Activities.details(id);   
                 runInAction( 'getting activity', () => {       
                     this.activity = activity;
                     this.loadingInitial = false;
                 })
             }catch(error){
-                runInAction( 'getting activity error', () => {
-                    console.log(error);
+                runInAction( 'getting activity error', () => {                    
                     this.loadingInitial = false;
                 })
+                throw error;
             }
         }
 
