@@ -21,6 +21,8 @@
     "experimentalDecorators": true
   },
   "include": [
-    "src", "src/features/home/HomePage.tsx"
+    "src", 
+    "src/features/home/HomePage.tsx",
+    "./typings-custom/**/*.ts"
   ]
 }

@@ -11,11 +11,12 @@ import ActivityForm from "../../features/activities/form/ActivityForm";
 import ActivityDetails from "../../features/activities/details/ActivityDetails";
 import NotFound from "./NotFound";
 import {ToastContainer} from 'react-toastify';
+import test from "../common/test/test";
  
 
 export const App: React.FC<RouteComponentProps> = ({location}) =>  {
 
- 
+   
 
     return (
       <Fragment>
@@ -28,6 +29,7 @@ export const App: React.FC<RouteComponentProps> = ({location}) =>  {
                     <NavBar/>
                     <Container style={{marginTop:'7em'}}>         
                       <Switch>
+                        <Route exact path='/test' component={test} /> 
                         <Route exact path='/activities' component={ActivityDashboard} />
                         <Route path='/activities/:id' component={ActivityDetails} />
                         <Route key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} /> 
