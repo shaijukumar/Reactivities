@@ -68,3 +68,17 @@ D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\FluentValidation.A
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 D:\Shaiju\DotNetCore\Reactivities\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cs
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\API.StaticWebAssets.xml
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Infrastructure.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
