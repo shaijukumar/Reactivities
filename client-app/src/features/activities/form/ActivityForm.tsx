@@ -2,7 +2,6 @@ import React, {useState, useContext, useEffect} from 'react'
 import { Segment, Form, Button, Grid } from 'semantic-ui-react'
 import { ActivityFormValues } from '../../../app/models/activity'
 import {v4 as uuid} from 'uuid';
-import ActivityStore from '../../../app/store/activityStore';
 import { observer } from 'mobx-react-lite';
 import { RouteComponentProps } from 'react-router-dom';
 import { Form as FinalForm, Field } from 'react-final-form';
@@ -19,6 +18,7 @@ import {
     composeValidators,
     hasLengthGreaterThan
   } from 'revalidate';
+import { RootStoreContext } from '../../../app/store/rootStore';
 
 
   const validate = combineValidators({
@@ -42,14 +42,14 @@ interface DetailParms{
 
 const ActivityForm : React.FC<RouteComponentProps<DetailParms>> = ({match, history}) => {
 
-    const activityStore = useContext(ActivityStore);
+    const rootStore = useContext(RootStoreContext);
     
     const{
             createActivity, 
             editActivity, 
             submitting,
             loadActivity
-        } = activityStore;
+        } = rootStore.activityStore;
 
         
      
