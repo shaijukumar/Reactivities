@@ -82,3 +82,7 @@ D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Infrastructure.pdb
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Castle.Core.dll
+D:\Shaiju\DotNetCore\Reactivities\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
