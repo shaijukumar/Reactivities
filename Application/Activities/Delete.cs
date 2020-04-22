@@ -5,7 +5,7 @@ using MediatR;
 using Persistence;
 
 namespace Application.Activities
-{
+{ 
     public class Delete
     {
         public class Command : IRequest
