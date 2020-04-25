@@ -18,6 +18,30 @@ Format selection - Ctrl+K Ctrl+F
 renaming all occurrences of a variable  - Ctrl F2
 
 
+EF
+=======
+> dotnet tool install --global dotnet-ef 
+> dotnet ef 
+> dotnet ef migrations add InitialCreate -p Persistence/ -s API/ 
+> dotnet ef migrations add ActivitiesAdded -p Persistence/ -s API/ 
+> drop database 
+> dotnet ef  database drop -p Persistence/ -s API/ 
+> dotnet watch run  
+
+Secrets 
+=======
+> dotnet user-secrets  
+> dotnet user-secrets init -p API/ 
+> dotnet user-secrets set "TokenKey" "MyKey123”  -p API/  
+> dotnet user-secrets list -p API/  
+
+Project  
+=======
+> dotnet new classlib -n Infrastructure  
+> dotnet sln add Infrastructure  
+> dotnet add reference ../Application  
+> Dotnet restore 
+
 Pages:
 
 Tech
@@ -28,3 +52,90 @@ Tech
 
 LCHF
 ====
+
+
+Steps for relational database
+1. Create domain calss > Domain\Comment.cs
+2. Add virtual entry in ref 
+    > Domain\Activity.cs
+    > public virtual ICollection<Comment> Comments { get; set; }
+3. Add entry in data context calss
+    > Persistence\DataContext.cs
+    > public DbSet<Comment> Comments { get; set; }
+4. Ctreate  data transfer object (DTO) calss
+    > Application\Comments\CommentDto.cs
+5. Create MappingProfile
+    > Application\Comments\MappingProfile.cs
+6. Create handler
+    > Application\Comments\Create.cs
+7. 
+
+
+SignalR
+=======
+1. API\Startup.cs
+    > services.AddSignalR();
+
+    >endpoints.MapHub<ChatHub>("/chat");
+
+    > Update Cors
+        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000").AllowCredentials();
+2. Create ChatHub
+    > API\SignalR\ChatHub.cs
+3. Create Auth for SignalR in  API\Startup.cs
+    opt.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context => 
+        {
+            var accessToken = context.Request.Query["access_token"];
+            var path = context.HttpContext.Request.Path;
+            if (!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/chat")))
+            {
+                context.Token = accessToken;
+            }
+
+            return Task.CompletedTask;
+        }
+    };
+4. Add signalR in clint
+    npm install @microsoft/signalr
+5. Create HubConnection in client-app\src\app\store\activityStore.ts
+
+    @action createHubConnection = () => {
+        this.hubConnection = new HubConnectionBuilder()
+        .withUrl('http://localhost:5000/chat', {
+            accessTokenFactory: () => this.rootStore.commonStore.token!
+        })
+        .configureLogging(LogLevel.Information)
+        .build();
+
+        this.hubConnection
+        .start()
+        .then(() => console.log(this.hubConnection!.state))
+        .catch((error) => console.log("Error establishing connection: ", error));
+
+        this.hubConnection.on('ReceiveComment', comment => {
+        runInAction(() => {
+            this.activity!.comments.push(comment)
+        })
+        })
+    };
+
+    @action stopHubConnection = () => {
+        this.hubConnection!.stop()
+    }
+6. Add comments entry in interface IActivity client-app\src\app\models\activity.ts
+
+7. Configure SignalR from client
+
+>  client-app\src\app\store\activityStore.ts
+    @action addComment = async (values: any) => {
+        values.activityId = this.activity!.id;
+        try {
+        await this.hubConnection!.invoke('SendComment', values)
+        } catch (error) {
+        console.log(error);
+        }
+    } 
+
+8. add client-app\src\features\activities\details\ActivityDetailedChat.tsx
