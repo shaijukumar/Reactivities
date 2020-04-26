@@ -139,3 +139,36 @@ SignalR
     } 
 
 8. add client-app\src\features\activities\details\ActivityDetailedChat.tsx
+
+Relational Tables
+================
+1. Create domain calss - Domain\UserFollowing.cs
+2. Add virtual entries in other calsses 
+    >Domain\AppUser.cs
+        >public string TargetId { get; set; }
+        > public virtual AppUser Target { get; set; }
+3. Add entry in Persistence\DataContext.cs
+    > public DbSet<UserFollowing> Followings { get; set; }
+4. Add releation in Persistence\DataContext.cs
+    >   builder.Entity<UserFollowing>(b =>
+        {
+            b.HasKey(k => new { k.ObserverId, k.TargetId });
+
+            b.HasOne(o => o.Observer)
+                .WithMany(f => f.Followings)
+                .HasForeignKey(o => o.ObserverId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            b.HasOne(o => o.Target)
+                .WithMany(f => f.Followers)
+                .HasForeignKey(o => o.TargetId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
+5. Run migrations 
+6. Create cammand handler 
+    > Application\Followers\Add.cs
+7. Create Controller
+> API\Controllers\FollowersController.cs
+
+7. Add entry into startup class - API\Startup.cs
+    services.AddScoped<IProfileReader, ProfileReader>();
